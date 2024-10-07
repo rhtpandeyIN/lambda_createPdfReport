@@ -1,0 +1,14 @@
+{
+    "name": "lambda_createPdfReport",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.mjs",
+    "scripts": {
+      "start": "node index.mjs"
+    },
+    "keywords": [],
+    "author": "Rohit Pandey",
+    "license": "ISC",
+    "dependencies": {
+    }
+  }
