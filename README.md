@@ -13,4 +13,6 @@
 9) Add Package.json file
 10) Run : npm install
 
-11)
+11) Create .github/workflows directories and added deployment.yaml file for CI/CD
+12) We need AWS ARN for the lambda and update the deployment script with that
+13) We need AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY 

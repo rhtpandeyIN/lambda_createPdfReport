@@ -1,0 +1,37 @@
+name: Deploy Lambda Rest APIs
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2   # --> Reference a specific version
+      - uses: actions/setup-node@v2 # --> To Setup the Server With Node Env
+        with:
+          node-version: '18'  #--> Specify the Version of the Node
+      
+      - name: npm install
+        env:
+          CI: true
+        run: |
+          npm ci
+
+      - name: Install zip tool
+        uses: montudor/action-zip@v1
+      - name: Create Zip file for Lambda function
+        run: zip -r code.zip .
+
+      - name: AWS CLI v2
+        uses: imehedi/actions-awscli-v2@latest
+        with:
+          args: "lambda update-function-code \
+            --function-name arn:aws:lambda:us-east-1:190440867671:function:lambda_createPdfReport \
+            --zip-file fileb://code.zip"
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: "us-east-1"
