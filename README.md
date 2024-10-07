@@ -12,3 +12,5 @@
 8) create index.mjs file and copy the content from AWS cloud
 9) Add Package.json file
 10) Run : npm install
+
+11)
