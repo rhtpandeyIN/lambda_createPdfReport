@@ -2,7 +2,7 @@ export const handler = async (event) => {
     // TODO implement
     const response = {
       statusCode: 200,
-      body: JSON.stringify('Hi UU, this is Rohit Pandey, and we are having a session on Serverless Programming'),
+      body: JSON.stringify('Hi Pathak sir, how are you today?'),
     };
     return response;
   };

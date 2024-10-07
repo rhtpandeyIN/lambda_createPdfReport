@@ -15,4 +15,9 @@
 
 11) Create .github/workflows directories and added deployment.yaml file for CI/CD
 12) We need AWS ARN for the lambda and update the deployment script with that
+
 13) We need AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY 
+    13.1) Go to IAM --> Create a new user and and go to "security credentials" and "create access keys"
+    13.2) Add these keys to Github repository settings --> secrets and variables --> actions --> and "new repo secrets"
+    13.3) We need to attach lambda execution policies/role in the user
+
